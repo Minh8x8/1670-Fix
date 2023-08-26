@@ -33,7 +33,7 @@ namespace FPTBookWeb.Areas.Admin.Controllers
             ProductVM productVM = new()
             {
                 CategoryList = _unitOfWork.Category
-                .GetAll().Select(u => new SelectListItem
+                .GetAll(c => c.Status == "Approved").Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.Id.ToString()
@@ -99,7 +99,7 @@ namespace FPTBookWeb.Areas.Admin.Controllers
             }
             else
             {
-                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                productVM.CategoryList = _unitOfWork.Category.GetAll(c => c.Status == "Approved").Select(u => new SelectListItem
                 {
                     Text = u.Name,
                     Value = u.Id.ToString()
