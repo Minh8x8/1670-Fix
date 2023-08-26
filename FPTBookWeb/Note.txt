@@ -1,0 +1,13 @@
+1. Requirements
+- Install Nuget package: Entity Framework Core, Sql, (and Tool for fix the nuget power shell error)
+- Create an Application DB Context, and configure in Program, also remember to define a connection string in appsettings.json
+- Now you can use the update-database command in nuget cmd.
+
+2. Step to create a table and migrate to sql
+- Create a model with properties
+- In DB Context, create a DBSet for that model
+- THen in PM Console, add a migration and update it to database
+
+3. Get theme and icon at:
+- https://icons.getbootstrap.com/
+- https://bootswatch.com/
